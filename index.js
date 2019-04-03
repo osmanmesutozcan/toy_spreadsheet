@@ -146,13 +146,7 @@ function main() {
   parser = new formulaParser.Parser();
 
   parser.on("callCellValue", onCallCellValue);
-  parser.on("callRangeValue", (...args) => {
-    try {
-      onCallRangeValue(...args);
-    } catch (e) {
-      console.error(e);
-    }
-  });
+  parser.on("callRangeValue", onCallRangeValue);
 
   // For exploration
   window.graph = graph;
